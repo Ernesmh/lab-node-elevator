@@ -4,6 +4,7 @@ const Person = require('./person.js');
 
 let elevator = new Elevator();
 intervalId = elevator.start();
+let person = new Person();
 
 elevator.stop(intervalId);
 

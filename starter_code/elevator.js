@@ -1,6 +1,6 @@
 class Elevator {
   constructor(){
-    this.floor      = 5;
+    this.floor      = 0;
     this.MAXFLOOR   = 10;
     this.requests   = [];
     this.direction = "up";
@@ -28,16 +28,25 @@ class Elevator {
   floorUp() {
     if(this.floor < this.MAXFLOOR){
     this.floor +=1;
-    console.log(this.floor);}
+    console.log(this.floor);
+  }else{
+    console.log("You're at the top floor");
+  }
    }
 
   floorDown() {
     if(this.floor > 0){
     this.floor +=1;
-    console.log(this.floor);}
-   }
+    console.log(this.floor);
+  }else{
+    console.log("You're at the top floor");
+  };
 
-  call() { }
+  call(person) {
+    this.requests.push(person);
+  }
+
+
   log() {
   console.log("direction " + this.direction + " floor" + this.floor); }
 }
