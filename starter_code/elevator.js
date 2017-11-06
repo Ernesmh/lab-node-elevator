@@ -1,6 +1,6 @@
 class Elevator {
   constructor(){
-    this.floor      = 0;
+    this.floor      = 2;
     this.MAXFLOOR   = 10;
     this.requests   = [];
     this.direction = "up";
@@ -23,6 +23,12 @@ class Elevator {
 
   update() {
       this.log();
+      if(this.requests !==0){
+        this.floor = this.requests[this.requests.length-1];
+        console.log(this.floor);;
+
+      }
+
    }
   _passengersEnter(person) {
       if(this.waitingList.length > 0){
@@ -66,7 +72,11 @@ class Elevator {
 
 
   log() {
+    if(this.floor === undefined){
+  console.log("direction " + this.direction + " floor " + 0);
+}else{
   console.log("direction " + this.direction + " floor " + this.floor); }
+}
 }
 
 module.exports = Elevator;

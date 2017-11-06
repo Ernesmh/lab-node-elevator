@@ -14,5 +14,5 @@ elevator.floorDown();
 elevator.call(person);
 
 elevator._passengersEnter(person);
-
+elevator.update();
 elevator._passengersLeave(person);
